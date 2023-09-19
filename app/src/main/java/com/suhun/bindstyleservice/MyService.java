@@ -8,10 +8,10 @@ import android.util.Log;
 
 public class MyService extends Service {
     private String tag = MyService.class.getSimpleName();
-    private Binder mbinder = new LocalService();
+    private Binder mbinder = new LocalBinder();
     public boolean isBinder = false;
 
-    public class LocalService extends Binder{ //新增內部類別
+    public class LocalBinder extends Binder{ //新增內部類別
         MyService getService(){//新增名稱為getService的方法，功能為回傳外部類別實體
             return MyService.this;
         }
